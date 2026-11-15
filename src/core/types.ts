@@ -31,3 +31,5 @@ export interface RenderedCountry {
 }
 
 export type SearchFn = (query: string) => void
+
+export type Resolve = (response: Response) => void
