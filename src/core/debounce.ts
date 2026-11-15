@@ -1,8 +1,10 @@
 import { SearchFn } from './types.js'
 export function debounce(fn: SearchFn, delay: number): SearchFn {
+    let timer: number | undefined
     return (query: string) => {
-        if (delay >= 0) {
+        clearTimeout(timer)
+        timer = setTimeout(() => {
             fn(query)
-        }
+        }, delay)
     }
 }
