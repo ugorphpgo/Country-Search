@@ -1,17 +1,17 @@
 import { RawCountry, RenderedCountry } from './types.js'
 
 export function mapCountryResponse(country: RawCountry): RenderedCountry {
-    const mockCountry: RenderedCountry = {
-        name: 'M',
-        capital: 'e',
+    return {
+        name: country.name,
+        flag: country.flag,
+        population: country.population,
+        subregion: country.subregion,
+        area: country.area ?? null,
         region: country.region,
-        languages: ['Spanish'],
-        borders: ['AND', 'FRA', 'GIB', 'PRT', 'MAR'],
-        flag: '🇪🇸',
-        population: 47351567,
-        subregion: 'Southern Europe',
-        area: 505992,
-        currencies: ['Euro'],
+        borders: country.borders ?? null,
+        capital: country.capital ?? null,
+        languages: country.languages.map((language) => language.name),
+        currencies:
+            country.currencies?.map((currency) => currency.name) ?? null,
     }
-    return mockCountry
 }
