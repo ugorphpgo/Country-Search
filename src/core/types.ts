@@ -29,3 +29,5 @@ export interface RenderedCountry {
     population: number
     region: string
 }
+
+export type SearchFn = (query: string) => void
