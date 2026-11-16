@@ -1,6 +1,6 @@
 import { HttpError } from './httpError.js';
 const BASE_URL = 'https://countries.dev/name/';
-const TIMEOUT_MS = 1000;
+const TIMEOUT_MS = 5000;
 export async function searchCountries(query, signal) {
     const url = BASE_URL + encodeURIComponent(query);
     const response = await fetch(url, {
