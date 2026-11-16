@@ -69,6 +69,7 @@ function renderCard(country: RenderedCountry): HTMLLIElement {
 }
 
 function render(state: SearchState): void {
+    status.dataset.kind = state.kind
     details.replaceChildren()
     switch (state.kind) {
         case 'idle':
